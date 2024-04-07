@@ -1,13 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-
-const fetchUrl = "https://fakestoreapi.com/products";
-
-async function fetchData(){
-    let fetchSite = await axios.get(fetchUrl);
-    let data = await fetchSite.json();
-    return data;
-}
 
 
 
