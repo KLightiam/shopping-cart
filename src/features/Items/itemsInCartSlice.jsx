@@ -16,7 +16,7 @@ const itemsInCartSlice = createSlice({
                 return item.id != action.payload.id;
             })
             return newState;
-        }
+        },
     }
 })
 
