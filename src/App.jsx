@@ -2,12 +2,17 @@ import { useEffect, useState } from 'react';
 import {Outlet} from "react-router-dom";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import './App.css'
+import { initializeShop } from './features/Items/allItems';
 
 function App() {
 const cartItems = useSelector((state) => state.itemsInCart);
-console.log(cartItems)
+const dispatch = useDispatch();
+
+useEffect(()=>{
+  dispatch(initializeShop())
+},[])
   return (
     <>
       <ul>

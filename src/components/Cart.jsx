@@ -3,10 +3,9 @@ import { removeFromCart } from "../features/Items/itemsInCartSlice";
 const Cart = () => {
   const items = useSelector((state) => state.itemsInCart);
   const dispatch = useDispatch();
-  console.log(items);
+  // console.log(items);
   return (
     <div>
-      <p>why not working?</p>
       {items.map((item) => {
         return (
           <div key={item.id}>

@@ -1,21 +1,16 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../features/Items/itemsInCartSlice";
-
-const fetchUrl = "https://fakestoreapi.com/products";
 
 const Shop = () => {
   const [buttonText, setButtonText] = useState("Add to Cart");
-  const [items, setItems] = useState([]);
+  const items = useSelector((state) => state.allItems);
+  const addedToCart = useSelector((state) => state.itemsInCart);
+  // const [items, setItems] = useState([]);
   const dispatch = useDispatch();
-  useEffect(() => {
-    (async function () {
-      let fetchSite = await fetch(fetchUrl);
-      let data = await fetchSite.json();
-      setItems(data);
-      console.log(items);
-    })();
-  }, []);
+  console.log(items);
+  console.log(addedToCart);
+
   return (
     <div>
       <h1>All Items</h1>
@@ -38,7 +33,7 @@ const Shop = () => {
                   }
                 }}
               >
-                Add to Cart
+                {(addedToCart.filter((cartItem) => cartItem.id == item.id).length)?"Remove from Cart":"Add to Cart"}
               </button>
             </div>
           </div>
