@@ -17,11 +17,14 @@ const itemsInCartSlice = createSlice({
             })
             return newState;
         },
+        resetCart(state,action){
+            return [];
+        }
     }
 })
 
 
 
-export const {addToCart, removeFromCart} = itemsInCartSlice.actions;
+export const {addToCart, removeFromCart, resetCart} = itemsInCartSlice.actions;
 
 export default itemsInCartSlice.reducer;

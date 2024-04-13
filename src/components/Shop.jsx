@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../features/Items/itemsInCartSlice";
 
 const Shop = () => {
-  const [buttonText, setButtonText] = useState("Add to Cart");
+  // const [buttonText, setButtonText] = useState("Add to Cart");
   const items = useSelector((state) => state.allItems);
   const addedToCart = useSelector((state) => state.itemsInCart);
   // const [items, setItems] = useState([]);
   const dispatch = useDispatch();
-  console.log(items);
-  console.log(addedToCart);
+  // console.log(items);
+  // console.log(addedToCart);
 
   return (
     <div>
@@ -33,7 +33,9 @@ const Shop = () => {
                   }
                 }}
               >
-                {(addedToCart.filter((cartItem) => cartItem.id == item.id).length)?"Remove from Cart":"Add to Cart"}
+                {addedToCart.filter((cartItem) => cartItem.id == item.id).length
+                  ? "Remove from Cart"
+                  : "Add to Cart"}
               </button>
             </div>
           </div>

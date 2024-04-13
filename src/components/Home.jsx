@@ -1,10 +1,11 @@
-
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
     return(
         <>
-            Lol
+            <h1>Welcome To The Imaginary Shop</h1>
+            <Link to="shop"><button>Go To Shop</button></Link>
         </>
     )
 
