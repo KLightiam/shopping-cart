@@ -13,12 +13,13 @@ const Shop = () => {
 
   return (
     <div>
-      <h1>All Items</h1>
+      <h1 className="text-center">All Items</h1>
+      <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-y-6 gap-x-3 ml-4">
       {items.map((item) => {
         return (
-          <div key={item.id}>
-            <img src={item.image} alt={item.title} srcset="" />
-            <p>{item.title}</p>
+          <div className="flex flex-col gap-2" key={item.id}>
+            <img className="h-40 w-32" src={item.image} alt={item.title} srcset="" />
+            <p className="h-12 overflow-hidden hover:overflow-auto">{item.title}</p>
             <div>
               <p>Price: Ghs {item.price}</p>
               <button
@@ -41,6 +42,7 @@ const Shop = () => {
           </div>
         );
       })}
+      </div>
     </div>
   );
 };

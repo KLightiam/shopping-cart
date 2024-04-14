@@ -7,8 +7,8 @@ export const ItemPrice = ({item,setTotal})=>{
     // const [price,setPrice] = useState(item.price);
     const [quantity, setQuantity] = useState(1);
     return(
-        <div>
-            <div>
+        <div className="flex flex-col items-center">
+            <div className="flex gap-3 items-center">
                <button onClick={(e)=>{
                 if(quantity > 1){
                     // console.log(e.target);
@@ -24,7 +24,7 @@ export const ItemPrice = ({item,setTotal})=>{
                 // setPrice(item.price * quantity);
                }}>+</button> 
             </div>
-            <p>Price: {item.price * quantity}</p>
+            <p className="text-center">Price: {item.price * quantity}</p>
         </div>
     )
 }
